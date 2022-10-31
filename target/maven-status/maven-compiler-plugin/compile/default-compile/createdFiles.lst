@@ -1,3 +1,13 @@
+Models\Utils\ConverterDateToLocalDateTime.class
+Controlles\PersonaController.class
 Models\Persona.class
-.netbeans_automatic_build
-Models\ConnectionDb.class
+Models\Interfaces\IConnectionDb.class
+Views\AppView$2.class
+Models\ConfigDB\Constantes\Constantes.class
+Views\AppView$1.class
+Views\appRun.class
+Views\AppView.class
+Views\AppView$3.class
+Models\ConfigDB\ConnectionDb.class
+Views\AppView$4.class
+Models\Interfaces\IPersonaController.class

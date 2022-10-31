@@ -5,8 +5,9 @@
  */
 package Models.ConfigDB;
 
-import Models.ConfigDB.Constantes.Constantes;
+
 import Models.Interfaces.IConnectionDb;
+import Models.Utils.Constantes;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import java.awt.HeadlessException;

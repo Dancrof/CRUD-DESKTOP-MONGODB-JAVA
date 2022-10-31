@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Models.ConfigDB.Constantes;
+package Models.Utils;
 
 /**
  *
@@ -16,5 +16,5 @@ public class Constantes {
      *
      * @return String
      */
-    public final static String URL_CONNET_DB = "Url de la conexion a su bd";
+    public final static String URL_CONNET_DB = "Aqui tu url de conexion a tu base de datos";
 }
