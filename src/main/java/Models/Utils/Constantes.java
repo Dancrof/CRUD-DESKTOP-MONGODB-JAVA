@@ -11,10 +11,12 @@ package Models.Utils;
  */
 public class Constantes {
 
+    //Aqui la conexion a la base de datos
+    
     /**
      * Constante de la Url de conexion de la base de datos
      *
      * @return String
      */
-    public final static String URL_CONNET_DB = "Aqui tu url de conexion a tu base de datos";
+    public final static String URL_CONNET_DB = "Aqui la conexion a la base de datos";
 }

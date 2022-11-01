@@ -54,6 +54,7 @@ public class AppView extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         pnlListPersonas = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPersonas = new javax.swing.JTable();
@@ -155,6 +156,14 @@ public class AppView extends javax.swing.JFrame {
             }
         });
 
+        btnBuscar.setBackground(new java.awt.Color(51, 153, 255));
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlAccionesLayout = new javax.swing.GroupLayout(pnlAcciones);
         pnlAcciones.setLayout(pnlAccionesLayout);
         pnlAccionesLayout.setHorizontalGroup(
@@ -166,6 +175,8 @@ public class AppView extends javax.swing.JFrame {
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlAccionesLayout.setVerticalGroup(
@@ -173,7 +184,9 @@ public class AppView extends javax.swing.JFrame {
             .addGroup(pnlAccionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(10, Short.MAX_VALUE))
@@ -338,6 +351,24 @@ public class AppView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
+     * busca un registro especifico en la base de datos
+     *
+     * @return void
+     */
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        IPersonaController controllerPerson5 = this.intancePersonaControlle();
+        Runnable ru = () -> {
+            if (!this.txtNombresCompletos.getText().isEmpty()) {
+                lblCargando.setVisible(true);
+                controllerPerson5.findOnePerson();               
+                lblCargando.setVisible(false);
+            }
+        };
+        Thread hilo = new Thread(ru);
+        hilo.start();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    /**
      * Validamos si los campos estan vacios o tienen valores incorrectos
      *
      * @return boolean
@@ -392,6 +423,7 @@ public class AppView extends javax.swing.JFrame {
     private javax.swing.JProgressBar brrCarga;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

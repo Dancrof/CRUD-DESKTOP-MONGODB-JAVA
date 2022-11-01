@@ -40,4 +40,11 @@ public interface IPersonaController {
      * @return void
      */
     void updateOnePerson();
+    
+    /**
+     * Busca un persona en especifica de l base de datos
+     *
+     * @return void
+     */
+    void findOnePerson();
 }
